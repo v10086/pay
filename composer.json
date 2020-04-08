@@ -1,0 +1,27 @@
+{
+  "name": "v10086/pay",
+  "type": "library",
+  "description": "支持支付宝、微信支付安全相关的核心内容【签名生成】以及【签名验证】等",
+  "keywords": [
+    "php",
+    "pdo",
+    "db",
+    "sql"
+  ],
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "v10086",
+      "email": "1146625863@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "v10086\\pay\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
