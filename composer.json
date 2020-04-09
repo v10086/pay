@@ -4,9 +4,11 @@
   "description": "支持支付宝、微信支付安全相关的核心内容【签名生成】以及【签名验证】等",
   "keywords": [
     "php",
-    "pdo",
-    "db",
-    "sql"
+    "pay",
+    "alipay",
+    "wechatpay",
+    "wechatsdk",
+    "alisdk"
   ],
   "license": "Apache-2.0",
   "authors": [
