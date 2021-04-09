@@ -49,7 +49,21 @@ class Ali {
             $params['sign'] = null;
             return self::verify(self::getSignContent($params), $sign, $pubKey, $signType);
     }
-        
+    
+    public static function verify($data, $sign, $pubKey, $signType = 'RSA') {
+		$res = "-----BEGIN PUBLIC KEY-----\n" .
+			wordwrap($pubKey, 64, "\n", true) .
+			"\n-----END PUBLIC KEY-----";
+
+		if ("RSA2" == $signType) {
+			$result = (bool)openssl_verify($data, base64_decode($sign), $res, OPENSSL_ALGO_SHA256);
+		} else {
+			$result = (bool)openssl_verify($data, base64_decode($sign), $res);
+		}
+		//释放资源
+		//openssl_free_key($res);
+		return $result;
+	}
     //支付宝生 成签名内容
     public static function getSignContent($params) {
         ksort($params);
